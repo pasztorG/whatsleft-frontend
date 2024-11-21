@@ -1,0 +1,83 @@
+.home-container {
+  margin: 0 auto;
+  padding: 12px 24px;
+  margin-top: 80px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.data-section {
+  display: flex;
+  gap: 1rem;
+  height: calc(100vh - 200px);
+}
+
+.dashboard-section {
+  flex: 2;
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow: auto;
+}
+
+.right-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0;
+}
+
+.financial-section {
+  flex: 1;
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow: auto;
+}
+
+.date-picker-container {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.date-range {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.dropdown-container {
+  display: flex;
+  gap: 10px;
+}
+
+select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 14px;
+  min-width: 120px;
+}
+
+.date-input {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #666;
+  font-weight: 500;
+}
+
+@media (max-width: 768px)

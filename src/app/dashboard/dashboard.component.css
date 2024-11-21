@@ -1,0 +1,215 @@
+:host {
+  display: block;
+  padding-top: 80px;
+  min-height: 100vh;
+  background-color: #f5f6fa;
+}
+
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Summary Cards */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.card h3 {
+  margin: 0 0 16px;
+  color: #2d3436;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.card small {
+  display: block;
+  color: #636e72;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+/* Monthly Highlights Section */
+.monthly-highlights {
+  margin-top: 40px;
+}
+
+.monthly-highlights h2 {
+  color: #2d3436;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.highlight-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.highlight-card:hover {
+  transform: translateY(-2px);
+}
+
+.highlight-card h3 {
+  font-size: 1rem;
+  margin: 0 0 12px;
+  color: #2d3436;
+}
+
+.highlight-card p {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.highlight-card small {
+  color: #636e72;
+  font-size: 0.9rem;
+}
+
+/* Monthly Table */
+.monthly-table {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.monthly-table h3 {
+  color: #2d3436;
+  margin: 0 0 20px;
+  font-size: 1.2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+th, td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #edf2f7;
+}
+
+th {
+  background-color: #f8fafc;
+  font-weight: 600;
+}
+
+tr:hover {
+  background-color: #f8f9fa;
+}
+
+.year-picker {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.year-select {
+  padding: 8px 16px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  min-width: 120px;
+}
+
+.year-select:hover {
+  border-color: #888;
+}
+
+.year-select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.year-picker {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.year-picker label {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.year-select {
+  padding: 0.5rem 2rem 0.5rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  background-color: white;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8.825L1.175 4 2.238 2.938 6 6.7l3.763-3.762L10.825 4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+}
+
+.year-select:hover {
+  border-color: #999;
+}
+
+.year-select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+}
+
+/* Update the existing dashboard-container style if you have it, or add it */
+.dashboard-container {
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}

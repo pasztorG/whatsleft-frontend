@@ -1,0 +1,45 @@
+<div class="modal">
+  <div class="modal-content">
+    <h2>Create New User</h2>
+    <form [formGroup]="createUserForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="newUsername">Username:</label>
+        <input type="text" id="newUsername" formControlName="username" required>
+        <div class="error" *ngIf="createUserForm.get('username')?.touched && createUserForm.get('username')?.errors?.['required']">
+          Username is required
+        </div>
+        <div class="error" *ngIf="createUserForm.get('username')?.touched && createUserForm.get('username')?.errors?.['minlength']">
+          Username must be at lxeast 4s characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="newPassword">Password:</label>
+        <input type="password" id="newPassword" formControlName="password" required>
+        <div class="error" *ngIf="createUserForm.get('password')?.touched && createUserForm.get('password')?.errors?.['required']">
+          Password is required
+        </div>
+        <div class="error" *ngIf="createUserForm.get('password')?.touched && createUserForm.get('password')?.errors?.['minlength']">
+          Password must be at least 6 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" formControlName="confirmPassword" required>
+        <div class="error" *ngIf="createUserForm.get('confirmPassword')?.touched && createUserForm.errors?.['mismatch']">
+          Passwords do not match
+        </div>
+      </div>
+
+      <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+      <div class="button-group">
+        <button type="submit" [disabled]="!createUserForm.valid || isLoading">
+          {{ isLoading ? 'Creating...' : 'Create User' }}
+        </button>
+        <button type="button" (click)="onClose()" [disabled]="isLoading">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

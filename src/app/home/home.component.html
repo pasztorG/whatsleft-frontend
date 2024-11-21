@@ -1,0 +1,29 @@
+<div class="home-container" [class.modal-open]="showTransactionModal">
+  <app-header [householdName]="householdName"></app-header>
+  <div class="content">
+    <div class="data-section">
+      <div class="dashboard-section">
+        <app-monthly-dashboard [financialData]="financialData"></app-monthly-dashboard>
+      </div>
+      <div class="right-section">
+        <button mat-raised-button color="primary" (click)="openTransactionModal()">Add Transaction</button>
+        <div class="financial-section">
+          <app-financial-data 
+            [financialData]="financialData"
+            [error]="error"
+            (dataChange)="onFinancialDataChange($event)"
+            (editTransaction)="onEditTransaction($event)">
+          </app-financial-data>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-backdrop" *ngIf="showTransactionModal" (click)="onModalClose(false)">
+    <app-transaction-form 
+      [isVisible]="showTransactionModal"
+      [editMode]="editMode"
+      [transactionToEdit]="transactionToEdit"
+      (close)="onModalClose($event)">
+    </app-transaction-form>
+  </div>
+</div>

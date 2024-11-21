@@ -1,0 +1,91 @@
+<app-header></app-header>
+<div class="dashboard-container">
+  <div class="dashboard-header">
+    <h1>Financial Overview</h1>
+    <div class="year-picker">
+      <label for="yearSelect">Viewing data for</label>
+      <select 
+        id="yearSelect"
+        [ngModel]="selectedYear"
+        (ngModelChange)="onYearChange($event)"
+        class="year-select">
+        <option *ngFor="let year of availableYears" [value]="year">
+          {{ year }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="summary-cards">
+    <div class="card">
+      <h3>Total Balance</h3>
+      <p [class.positive]="balance >= 0" [class.negative]="balance < 0">
+        {{ balance | currency:'USD' }}
+      </p>
+    </div>
+    <div class="card">
+      <h3>Total Income</h3>
+      <p class="positive">{{ totalIncome | currency:'USD' }}</p>
+      <small>Regular: {{ regularIncome | currency:'USD' }}</small>
+    </div>
+    <div class="card">
+      <h3>Total Expenses</h3>
+      <p class="negative">{{ totalExpenses | currency:'USD' }}</p>
+      <small>Regular: {{ regularExpenses | currency:'USD' }}</small>
+    </div>
+  </div>
+
+  <div class="monthly-highlights">
+    <h2>Monthly Highlights</h2>
+    <div class="highlights-grid">
+      <div class="highlight-card">
+        <h3>Highest Income Month</h3>
+        <p class="positive">{{ highestIncomeMonth?.income | currency:'USD' }}</p>
+        <small>{{ highestIncomeMonth?.month | date:'MMMM yyyy' }}</small>
+      </div>
+      
+      <div class="highlight-card">
+        <h3>Lowest Income Month</h3>
+        <p class="warning">{{ lowestIncomeMonth?.income | currency:'USD' }}</p>
+        <small>{{ lowestIncomeMonth?.month | date:'MMMM yyyy' }}</small>
+      </div>
+
+      <div class="highlight-card">
+        <h3>Highest Expense Month</h3>
+        <p class="negative">{{ highestExpenseMonth?.expenses | currency:'USD' }}</p>
+        <small>{{ highestExpenseMonth?.month | date:'MMMM yyyy' }}</small>
+      </div>
+
+      <div class="highlight-card">
+        <h3>Lowest Expense Month</h3>
+        <p class="positive">{{ lowestExpenseMonth?.expenses | currency:'USD' }}</p>
+        <small>{{ lowestExpenseMonth?.month | date:'MMMM yyyy' }}</small>
+      </div>
+    </div>
+
+    <div class="monthly-table">
+      <h3>Monthly Breakdown</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th>Income</th>
+            <th>Expenses</th>
+            <th>Balance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let stat of monthlyStats">
+            <td>{{ stat.month | date:'MMMM yyyy' }}</td>
+            <td class="positive">{{ stat.income | currency:'USD' }}</td>
+            <td class="negative">{{ stat.expenses | currency:'USD' }}</td>
+            <td [class.positive]="stat.balance >= 0" 
+                [class.negative]="stat.balance < 0">
+              {{ stat.balance | currency:'USD' }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

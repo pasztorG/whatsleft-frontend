@@ -1,0 +1,186 @@
+.balance {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.top-expenses {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+}
+
+.expense-list {
+  margin-top: 10px;
+}
+
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.expense-item:last-child {
+  border-bottom: none;
+}
+
+.category {
+  font-weight: 500;
+}
+
+.amount {
+  color: #e74c3c;
+}
+
+.monthly-dashboard-container {
+  padding: 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Summary Cards */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card h4 {
+  color: #666;
+  font-size: 0.85rem;
+  margin: 0 0 5px 0;
+}
+
+.card p {
+  color: #2d3748;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Compact Sections */
+.compact-section {
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.compact-section h4 {
+  color: #2d3748;
+  margin: 0 0 12px 0;
+  font-size: 1rem;
+}
+
+/* Top Expenses */
+.expense-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+
+/* Monthly Overview */
+.trends-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.trend-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+
+.trend-item .label {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.trend-item .value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+/* Budget Progress Styles */
+.budget-progress {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.budget-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.budget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: #edf2f7;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: #48bb78;
+  transition: width 0.3s ease;
+}
+
+.progress.warning {
+  background-color: #ed8936;
+}
+
+.progress.danger {
+  background-color: #e53e3e;
+}
+
+/* Update expense-item to show percentage */
+.expense-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 15px;
+}
+
+.percentage {
+  color: #718096;
+  font-size: 0.9rem;
+}

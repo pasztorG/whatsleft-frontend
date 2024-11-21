@@ -1,0 +1,70 @@
+<div class="financial-data-container">
+  <mat-tab-group>
+    <mat-tab label="Monthly Transactions">
+      <div class="tab-content">
+        <mat-card *ngFor="let item of getFilteredData('monthly')" class="card">
+          <mat-card-content>
+            <div class="transaction-content">
+              <div class="amount-section">
+                <span class="amount" [class.expense]="item.type === 'Expense'">
+                  {{item.type === 'Expense' ? '-' : '+'}}{{ item.amount | currency }}
+                </span>
+                <span class="date">{{ item.date | date:'MMM d, y' }}</span>
+              </div>
+              <div class="details-section">
+                <span class="description">{{ item.description }}</span>
+              </div>
+              
+              <div class="action-buttons">
+                <button mat-icon-button (click)="onModify(item)">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button (click)="onDelete(item.id)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-tab>
+    
+    <mat-tab label="Regular Transactions">
+      <div class="tab-content">
+        <mat-card *ngFor="let item of getFilteredData('regular')" class="card">
+          <mat-card-content>
+            <div class="transaction-content">
+              <div class="amount-section">
+                <span class="amount" [class.expense]="item.type === 'Expense'">
+                  {{item.type === 'Expense' ? '-' : '+'}}{{ item.amount | currency }}
+                </span>
+                <span class="date">{{ item.date | date:'MMM d, y' }}</span>
+              </div>
+              <div class="details-section">
+                <span class="description">{{ item.description }}</span>
+              </div>
+              
+              <div class="action-buttons">
+                <button mat-icon-button (click)="onModify(item)">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button (click)="onDelete(item.id)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+
+<div class="modal-backdrop" *ngIf="isFormVisible" (click)="onModalBackdropClick($event)">
+  <app-transaction-form
+    [isVisible]="isFormVisible"
+    [editMode]="!!selectedTransaction"
+    [transactionToEdit]="selectedTransaction"
+    (close)="onFormClose($event)">
+  </app-transaction-form>
+</div>

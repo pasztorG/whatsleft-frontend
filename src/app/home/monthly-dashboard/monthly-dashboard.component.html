@@ -1,0 +1,65 @@
+<div class="monthly-dashboard-container">
+  <div class="summary-cards">
+    <div class="card compact">
+      <div class="card-content">
+        <h4>Current Balance</h4>
+        <p>${{balance}}</p>
+      </div>
+    </div>
+    <div class="card compact">
+      <div class="card-content">
+        <h4>Monthly Income</h4>
+        <p>${{monthlyIncome}}</p>
+      </div>
+    </div>
+    <div class="card compact">
+      <div class="card-content">
+        <h4>Monthly Expenses</h4>
+        <p>${{monthlyExpenses}}</p>
+      </div>
+    </div>
+    <div class="card compact">
+      <div class="card-content">
+        <h4>Savings Rate</h4>
+        <p>{{savingsRate}}%</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-grid">
+    <div class="top-expenses compact-section">
+      <h4>Top 5 Expense Categories</h4>
+      <div class="expense-list">
+        @for (expense of topExpenseCategories; track expense.category) {
+          <div class="expense-item">
+            <span class="category">{{expense.category}}</span>
+            <span class="amount">${{expense.amount}} ({{expense.percentageOfTotal | number:'1.0-1'}}%)</span>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="spending-trends compact-section">
+      <h4>Monthly Overview</h4>
+      <div class="trends-grid">
+        <div class="trend-item">
+          <span class="label">Remaining: </span>
+          <span class="value">${{remainingBudget}}</span>
+        </div>
+        <div class="trend-item">
+          <span class="label">Daily Avg: </span>
+          <span class="value">${{dailyAverage}}</span>
+        </div>
+        <div class="trend-item">
+          <span class="label">Largest: </span>
+          <span class="value">${{largestTransaction}}</span>
+        </div>
+        <div class="trend-item">
+          <span class="label">Days Left: </span>
+          <span class="value">{{daysLeftInMonth}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
